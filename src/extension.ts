@@ -1,25 +1,31 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
+import { Plugins } from "./plugins";
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "can-i-search" is now active!');
+  const plugins = new Plugins();
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('can-i-search.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Can I Search!');
-	});
+  const openWeb = vscode.commands.registerCommand("can-i-search.web", () => {
+    plugins.openWeb();
+  });
+  const openNpm = vscode.commands.registerCommand("can-i-search.npm", () => {
+    plugins.openNpm();
+  });
+  const openTranslate = vscode.commands.registerCommand(
+    "can-i-search.translate",
+    () => {
+      plugins.openTranslate();
+    }
+  );
+  const insertConsole = vscode.commands.registerCommand(
+    "can-i-search.console",
+    () => {
+      plugins.insertConsole();
+    }
+  );
 
-	context.subscriptions.push(disposable);
+  context.subscriptions.push(openWeb, openNpm, openTranslate, insertConsole);
 }
 
 // this method is called when your extension is deactivated
