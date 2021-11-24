@@ -2,6 +2,8 @@
   "name": "can-i-search",
   "displayName": "Can I Search",
   "description": "You Can Search",
+  "publisher": "xiaogang",
+  "icon": "images/logo.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.62.0"
