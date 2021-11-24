@@ -18,14 +18,26 @@ export function activate(context: vscode.ExtensionContext) {
       plugins.openTranslate();
     }
   );
-  const insertConsole = vscode.commands.registerCommand(
-    "can-i-search.console",
+  const addConsole = vscode.commands.registerCommand(
+    "can-i-search.addConsole",
     () => {
-      plugins.insertConsole();
+      plugins.addConsole();
+    }
+  );
+  const deleteConsole = vscode.commands.registerCommand(
+    "can-i-search.deleteConsole",
+    () => {
+      plugins.deleteConsole();
     }
   );
 
-  context.subscriptions.push(openWeb, openNpm, openTranslate, insertConsole);
+  context.subscriptions.push(
+    openWeb,
+    openNpm,
+    openTranslate,
+    addConsole,
+    deleteConsole
+  );
 }
 
 // this method is called when your extension is deactivated

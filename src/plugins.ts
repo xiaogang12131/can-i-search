@@ -17,7 +17,7 @@ export class Plugins {
       this.config.translate || "https://translate.google.cn/?text={query}"
     );
   }
-  insertConsole() {
+  addConsole() {
     // 获取编辑器
     const editor = vscode.window.activeTextEditor;
     if (editor) {
@@ -40,5 +40,44 @@ export class Plugins {
           });
         });
     }
+  }
+  deleteConsole() {
+    // 正则 匹配console.log、console.info等代码，以及log()函数
+    const logRegex = /console.(log|debug|info|warn|error|assert|dir|dirxml|trace|group|groupEnd|time|timeEnd|profile|profileEnd|count)\((.*)\);?/g;
+    const editor = vscode.window.activeTextEditor;
+    if (!editor) {
+      return;
+    }
+    const document = editor.document;
+    const documentText = document.getText();
+    // 正则匹配的range数组
+    const ranges: vscode.Range[] = [];
+
+    let match;
+    // 注意：match全局匹配时没有index
+    while ((match = logRegex.exec(documentText))) {
+      // document.positionAt(字符位数) 可以获取到 position
+      // 再用 position 生成 range
+      const matchRange = new vscode.Range(
+        document.positionAt(match.index),
+        document.positionAt(match.index + match[0].length)
+      );
+      if (!matchRange.isEmpty) {
+        ranges.push(matchRange);
+      }
+    }
+
+    editor
+      .edit((editBuilder) => {
+        ranges.forEach((range) => {
+          editBuilder.replace(range, "");
+        });
+      })
+      .then(() => {
+        // 输出提示
+        vscode.window.showInformationMessage(
+          `${ranges.length} console.logs deleted`
+        );
+      });
   }
 }

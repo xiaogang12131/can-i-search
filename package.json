@@ -15,7 +15,8 @@
     "onCommand:can-i-search.web",
     "onCommand:can-i-search.npm",
     "onCommand:can-i-search.translate",
-    "onCommand:can-i-search.console"
+    "onCommand:can-i-search.addConsole",
+    "onCommand:can-i-search.deleteConsole"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -85,8 +86,13 @@
       },
       {
         "when": "editorTextFocus",
-        "command": "can-i-search.console",
+        "command": "can-i-search.addConsole",
         "key": "shift+alt+l"
+      },
+      {
+        "when": "editorTextFocus",
+        "command": "can-i-search.deleteConsole",
+        "key": "shift+alt+d"
       }
     ]
   },

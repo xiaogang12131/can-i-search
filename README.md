@@ -3,7 +3,11 @@
 you can search
 
 ## Features
+web: shift + alt + w
 
+npm: shift + alt + n
+
+translate: shift + alt + t
 ## Extension Settings
 You can configure different parameters, for example
 ```
