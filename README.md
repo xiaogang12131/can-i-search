@@ -1,13 +1,15 @@
-# can-i-search README
+# Can I Search
 
-you can search
+You Can Search
 
 ## Features
-web: shift + alt + w
+search something
 
-npm: shift + alt + n
+* web: shift + alt + w
 
-translate: shift + alt + t
+* npm: shift + alt + n
+
+* translate: shift + alt + t
 ## Extension Settings
 You can configure different parameters, for example
 ```

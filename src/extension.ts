@@ -12,10 +12,19 @@ export function activate(context: vscode.ExtensionContext) {
   const openNpm = vscode.commands.registerCommand("can-i-search.npm", () => {
     plugins.openNpm();
   });
+  const openGithub = vscode.commands.registerCommand("can-i-search.github", () => {
+    plugins.openGithub();
+  });
   const openTranslate = vscode.commands.registerCommand(
     "can-i-search.translate",
     () => {
       plugins.openTranslate();
+    }
+  );
+  const openSearch = vscode.commands.registerCommand(
+    "can-i-search.search",
+    () => {
+      plugins.openSearch();
     }
   );
   const addConsole = vscode.commands.registerCommand(
@@ -34,7 +43,9 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     openWeb,
     openNpm,
+    openGithub,
     openTranslate,
+    openSearch,
     addConsole,
     deleteConsole
   );

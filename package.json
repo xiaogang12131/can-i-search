@@ -11,10 +11,21 @@
   "categories": [
     "Other"
   ],
+  "keywords": [
+    "can i search",
+    "search",
+    "can",
+    "web",
+    "npm",
+    "github",
+    "translate"
+  ],
   "activationEvents": [
     "onCommand:can-i-search.web",
     "onCommand:can-i-search.npm",
+    "onCommand:can-i-search.github",
     "onCommand:can-i-search.translate",
+    "onCommand:can-i-search.search",
     "onCommand:can-i-search.addConsole",
     "onCommand:can-i-search.deleteConsole"
   ],
@@ -30,12 +41,12 @@
         "title": "Open Npm"
       },
       {
-        "command": "can-i-search.translate",
-        "title": "Open Translate"
+        "command": "can-i-search.github",
+        "title": "Open Github"
       },
       {
-        "command": "can-i-search.console",
-        "title": "Insert Console"
+        "command": "can-i-search.translate",
+        "title": "Open Translate"
       }
     ],
     "menus": {
@@ -49,8 +60,12 @@
           "group": "group@2"
         },
         {
-          "command": "can-i-search.translate",
+          "command": "can-i-search.github",
           "group": "group@3"
+        },
+        {
+          "command": "can-i-search.translate",
+          "group": "group@4"
         }
       ],
       "explorer/context": [
@@ -63,8 +78,12 @@
           "group": "group@2"
         },
         {
-          "command": "can-i-search.translate",
+          "command": "can-i-search.github",
           "group": "group@3"
+        },
+        {
+          "command": "can-i-search.translate",
+          "group": "group@4"
         }
       ]
     },
@@ -81,8 +100,18 @@
       },
       {
         "when": "editorTextFocus",
+        "command": "can-i-search.github",
+        "key": "shift+alt+g"
+      },
+      {
+        "when": "editorTextFocus",
         "command": "can-i-search.translate",
         "key": "shift+alt+t"
+      },
+      {
+        "when": "editorTextFocus",
+        "command": "can-i-search.search",
+        "key": "shift+alt+s"
       },
       {
         "when": "editorTextFocus",
