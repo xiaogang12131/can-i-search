@@ -7,7 +7,7 @@ import * as open from "open";
  */
 const openBrowser = (url: string, query?: string) => {
   if (query) {
-    open(url.replace(/{query}/, query));
+    open(encodeURI(url.replace(/{query}/, query)));
   } else {
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
@@ -15,7 +15,7 @@ const openBrowser = (url: string, query?: string) => {
     }
     const selection = editor.selection;
     const text = editor.document.getText(selection);
-    open(url.replace(/{query}/, text ?? ""));
+    open(encodeURI(url.replace(/{query}/, text ?? "")));
   }
 };
 

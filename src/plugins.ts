@@ -7,10 +7,10 @@ export class Plugins {
     const vscodeConfig =
       vscode.workspace.getConfiguration("can-i-search") || {};
     this.config = {
-      web: "https://www.google.com/search?q={query}",
+      web: "https://www.baidu.com/s?wd={query}",
       npm: "https://www.npmjs.com/{query}",
-      gh:"https://github.com/search?q={query}",
-      tr: "https://translate.google.com/?text={query}",
+      gh: "https://github.com/search?q={query}",
+      tr: "https://fanyi.baidu.com/translate?lang=auto2zh&query={query}",
       ...vscodeConfig,
     };
   }
@@ -30,8 +30,10 @@ export class Plugins {
     let quickPick = vscode.window.createQuickPick();
     quickPick.placeholder = "you can search";
     quickPick.onDidChangeValue((val) => {
-      const key = val.split(" ")[0] ?? "";
-      const value = val.split(" ")[1] ?? "";
+      const query = val.trim();
+      const index = query.indexOf(" ");
+      const key = query.slice(0, index) ?? "";
+      const value = query.slice(index + 1) ?? "";
       quickPick.items = [];
       if (Object.keys(this.config).includes(key)) {
         quickPick.items = [
@@ -43,10 +45,14 @@ export class Plugins {
       }
     });
     quickPick.onDidAccept(() => {
-      const key = quickPick.value.split(" ")[0] ?? "";
-      const value = quickPick.value.split(" ")[1] ?? "";
+      const query = quickPick.value.trim();
+      const index = query.indexOf(" ");
+      const key = query.slice(0, index) ?? "";
+      const value = query.slice(index + 1) ?? "";
       if (Object.keys(this.config).includes(key)) {
         openBrowser(this.config[key], value);
+      } else {
+        openBrowser(this.config.web, query);
       }
     });
     quickPick.onDidHide(() => quickPick.dispose());
