@@ -8,6 +8,10 @@
   "engines": {
     "vscode": "^1.56.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaogang12131/can-i-search.git"
+  },
   "categories": [
     "Other"
   ],
