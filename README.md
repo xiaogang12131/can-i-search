@@ -28,7 +28,7 @@ Quickly open the browser to search after selecting keywords.
 ![demo4.png](./images/demo4.png)
 
 ## Extension Settings
-You can configure different parameters in setting.json, or customize some parameters.
+You can configure different parameters in setting.json, or customize some parameters, reload vscode.
 
 for example
 ```

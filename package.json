@@ -4,9 +4,9 @@
   "description": "You Can Search",
   "publisher": "xiaogang",
   "icon": "images/logo.png",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
-    "vscode": "^1.52.0"
+    "vscode": "^1.56.0"
   },
   "categories": [
     "Other"
@@ -140,7 +140,7 @@
     "@types/glob": "^7.1.4",
     "@types/mocha": "^9.0.0",
     "@types/node": "14.x",
-    "@types/vscode": "^1.62.0",
+    "@types/vscode": "^1.56.0",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "@vscode/test-electron": "^1.6.2",
