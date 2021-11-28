@@ -4,7 +4,7 @@
   "description": "You Can Search",
   "publisher": "xiaogang",
   "icon": "images/logo.png",
-  "version": "0.0.3",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.56.0"
   },
@@ -113,7 +113,6 @@
         "key": "shift+alt+t"
       },
       {
-        "when": "editorTextFocus",
         "command": "can-i-search.search",
         "key": "shift+alt+s"
       },
