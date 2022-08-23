@@ -23,6 +23,8 @@ Quickly open the browser to search after selecting keywords.
 
 * translate: `shift + alt + t`
 
+* use: `shift + alt + u` (can i use)
+
 ![demo3.png](./images/demo3.png)
 
 ![demo4.png](./images/demo4.png)

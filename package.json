@@ -17,12 +17,14 @@
   ],
   "keywords": [
     "can i search",
+    "can i use",
     "search",
     "can",
     "web",
     "npm",
     "github",
-    "translate"
+    "translate",
+    "use"
   ],
   "activationEvents": [
     "onCommand:can-i-search.web",
@@ -30,6 +32,7 @@
     "onCommand:can-i-search.npmDirect",
     "onCommand:can-i-search.github",
     "onCommand:can-i-search.translate",
+    "onCommand:can-i-search.use",
     "onCommand:can-i-search.search",
     "onCommand:can-i-search.addConsole",
     "onCommand:can-i-search.deleteConsole"
@@ -112,6 +115,11 @@
         "when": "editorTextFocus",
         "command": "can-i-search.translate",
         "key": "shift+alt+t"
+      },
+      {
+        "when": "editorTextFocus",
+        "command": "can-i-search.use",
+        "key": "shift+alt+u"
       },
       {
         "command": "can-i-search.search",

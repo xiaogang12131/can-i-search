@@ -12,6 +12,7 @@ export class Plugins {
       npmDirect: "https://www.npmjs.com/package/{query}",
       gh: "https://github.com/search?q={query}",
       tr: "https://fanyi.baidu.com/translate?lang=auto2zh&query={query}",
+      use: "https://caniuse.com/?search={query}",
       ...vscodeConfig,
     };
   }
@@ -27,6 +28,9 @@ export class Plugins {
   }
   openTranslate() {
     openBrowser(this.config.tr);
+  }
+  openUse() {
+    openBrowser(this.config.use);
   }
   openSearch() {
     let quickPick = vscode.window.createQuickPick();

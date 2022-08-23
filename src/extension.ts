@@ -24,6 +24,9 @@ export function activate(context: vscode.ExtensionContext) {
       plugins.openTranslate();
     }
   );
+  const openUse = vscode.commands.registerCommand("can-i-search.use", () => {
+    plugins.openUse();
+  });
   const openSearch = vscode.commands.registerCommand(
     "can-i-search.search",
     () => {
@@ -49,6 +52,7 @@ export function activate(context: vscode.ExtensionContext) {
     openNpmDirect,
     openGithub,
     openTranslate,
+    openUse,
     openSearch,
     addConsole,
     deleteConsole
