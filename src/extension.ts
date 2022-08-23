@@ -12,6 +12,9 @@ export function activate(context: vscode.ExtensionContext) {
   const openNpm = vscode.commands.registerCommand("can-i-search.npm", () => {
     plugins.openNpm();
   });
+  const openNpmDirect = vscode.commands.registerCommand("can-i-search.npmDirect", () => {
+    plugins.openNpm('direct');
+  });
   const openGithub = vscode.commands.registerCommand("can-i-search.github", () => {
     plugins.openGithub();
   });
@@ -43,6 +46,7 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     openWeb,
     openNpm,
+    openNpmDirect,
     openGithub,
     openTranslate,
     openSearch,

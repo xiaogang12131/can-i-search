@@ -8,7 +8,8 @@ export class Plugins {
       vscode.workspace.getConfiguration("can-i-search") || {};
     this.config = {
       web: "https://www.baidu.com/s?wd={query}",
-      npm: "https://www.npmjs.com/{query}",
+      npm: "https://www.npmjs.com/search?q={query}",
+      npmDirect: "https://www.npmjs.com/package/{query}",
       gh: "https://github.com/search?q={query}",
       tr: "https://fanyi.baidu.com/translate?lang=auto2zh&query={query}",
       ...vscodeConfig,
@@ -17,8 +18,9 @@ export class Plugins {
   openWeb() {
     openBrowser(this.config.web);
   }
-  openNpm() {
-    openBrowser(this.config.npm);
+  openNpm(type?: string) {
+    const {npm, npmDirect} = this.config;
+    openBrowser(type === 'direct' ? npmDirect : npm);
   }
   openGithub() {
     openBrowser(this.config.gh);
